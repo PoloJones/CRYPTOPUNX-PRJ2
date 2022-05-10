@@ -1,0 +1,43 @@
+
+#grad {
+    background-image: linear-gradient(#6a6a6a, #ffffff);
+  }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+#ethereum-card, #bitcoin-card, #dogecoin-card{
+    width: 300px;
+}
+
+#logo {
+    width: 315px;
+}
+
+.card-title{
+  color: #090d29;
+
+}
+
+.card-action{
+   color: #090d29;
+}
+.nav-wrapper {
+    background-color: #090d29 !important;
+  }
+
+  .inputbg {
+    background-color:rgb(255, 255, 255);
+}  
+
+.boxwidth{
+  max-width: 50%;
+}
+
+.bold{
+  font-weight: 800;
+color:#090d29 ;
+}
+

@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <link
     rel="stylesheet"
-    href="./style.css"/>
+    href="./assets/css/style.css">
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+  <body id="grad">
     <!-- header with title, username, logout button-->
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">CRYPTOPUNX</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>Username</li>
+            <li>Cryptogod420</li>
             <li><a href="#.html">Logout</a></li>
           </ul>
       </div>
@@ -74,12 +74,30 @@
       </div>   
 </div>
 
-<!-- display posts that were previously submitted by user/other users here -->
+
 
 <div class="container ">
+
+    <!-- user input for their forum post + submit button -->
+    <div class="row center ">
+      <form class="col s12">
+        <div class="row">
+            <p class="bold">Add a post</p>
+          <div class="input-field col s12 inputbg">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Textarea</label>
+          </div>
+        </div>
+      </form>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+    </div>
+
+
+<!-- display posts that were previously submitted by user/other users here -->
+
     <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
+      <div class="card posts">
+        <div class="card-content black-text">
           <span class="card-title">Cryptogod420</span>
           <p>Keep an eye on Dogecoin, Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
               Dolorem, mollitia error. Odit quisquam assumenda provident quia totam voluptatum 
@@ -91,8 +109,8 @@
     </div>
 
     <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
+        <div class="card posts">
+          <div class="card-content black-text">
             <span class="card-title">Cryptogod420</span>
             <p>Keep an eye on Dogecoin, Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                 Dolorem, mollitia error. Odit quisquam assumenda provident quia totam voluptatum 
@@ -102,10 +120,11 @@
             <a href="#">Delete</a>
         </div>
       </div>
+      </div>
 
       <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
+        <div class="card posts">
+          <div class="card-content black-text">
             <span class="card-title">Cryptogod420</span>
             <p>Keep an eye on Dogecoin, Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                 Dolorem, mollitia error. Odit quisquam assumenda provident quia totam voluptatum 
@@ -116,21 +135,6 @@
         </div>
       </div>
   </div>
-
-  
-    <!-- user input for their forum post + submit button -->
-    <div class="row center">
-        <form class="col s12">
-          <div class="row">
-              <p>Add a post</p>
-            <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Textarea</label>
-            </div>
-          </div>
-        </form>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
-      </div>
     </div>
  
 
