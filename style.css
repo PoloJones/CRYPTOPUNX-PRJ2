@@ -1,0 +1,11 @@
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#ethereum-card, #bitcoin-card, #dogecoin-card{
+    width: 300px;
+}
