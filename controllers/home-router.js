@@ -12,10 +12,21 @@ const apikey = "8bd75f8c-d432-4f8c-83de-df36a896d752";
 
 router.get("/", async (req, res) => {
   try {
-    const response = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ apikey + "&start=1&limit=5&convert=USD");
-    const data = await response.json();
+    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=BTC&convert=USD"); 
+    const dataBTC = await responseBTC.json();
+    console.log(dataBTC.data.name);
+    console.log(dataBTC.data.quote.USD.price);
 
-console.log(data);
+    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=ETH&convert=USD"); 
+    const dataETH = await responseETH.json();
+    console.log(dataETH.data.name);
+    console.log(dataETH.data.quote.USD.price);
+
+    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=USDT&convert=USD"); 
+    const dataUSDT = await responseUSDT.json();
+    console.log(dataUSDT.data.name);
+    console.log(dataUSDT.data.quote.USD.price);
+
     let user;
     if (req.session.isLoggedIn) {
       user = await User.findByPk(req.session.userId, {
@@ -27,7 +38,9 @@ console.log(data);
       title: "Home Page",
       isLoggedIn: req.session.isLoggedIn,
       user,
-      data,
+      dataBTC,
+      dataETH,
+      dataUSDT,
     });
   } catch (error) {
     console.error(error);
