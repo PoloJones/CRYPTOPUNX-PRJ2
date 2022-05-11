@@ -1,0 +1,44 @@
+h1 {
+    font-family: Righteous;
+}
+
+.card {
+    width: 500px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .card {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+.flex-container1 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card1 {
+    height: 20px;
+    width: 50px;
+    margin-top: 10px;
+    margin: 10px;
+}
+
+.card2 {
+    height: 20px;
+}
+
+.row1 {
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+.card-action {
+    margin-left: 125px;
+    font-size: x-large;
+}
