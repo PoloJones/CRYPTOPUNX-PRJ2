@@ -11,7 +11,7 @@ const seedDatabase = async () => {
     await User.bulkCreate(userData, {
       individualHooks: true,
       returning: true,
-    }
+    })
 
 
     await Post.bulkCreate(postData);
