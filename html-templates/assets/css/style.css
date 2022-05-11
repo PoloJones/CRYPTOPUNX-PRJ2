@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-#ethereum-card, #bitcoin-card, #dogecoin-card{
+#ethereumCard, #bitcoinCard, #dogecoinCard{
     width: 300px;
 }
 

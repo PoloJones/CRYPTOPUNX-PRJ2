@@ -11,9 +11,11 @@ const seedDatabase = async () => {
     await User.bulkCreate(userData, {
       individualHooks: true,
       returning: true,
-    })
-    await Post.bulkCreate(postData)
-    ;
+    }
+
+
+    await Post.bulkCreate(postData);
+    
     console.log("Finished seeding database.");
   } catch (error) {
     console.error(error);
