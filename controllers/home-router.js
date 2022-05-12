@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 const router = require("express").Router();
 const { User, Post } = require("../models");
-const apikey = "8bd75f8c-d432-4f8c-83de-df36a896d752";
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
 
@@ -13,20 +12,20 @@ const apikey = "8bd75f8c-d432-4f8c-83de-df36a896d752";
 //route to display 3 coins on landing page
 router.get("/", async (req, res) => {
   try {
-    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ apikey + "&start=1&limit=30&convert=USD"); 
+    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD"); 
     const {data:coins} = await responseCoin.json();
     console.log(coins);
   
-    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=BTC&convert=USD"); 
+    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=BTC&convert=USD"); 
     const {data:BTC} = await responseBTC.json();
     console.log(BTC);
     
 
-    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=ETH&convert=USD"); 
+    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=ETH&convert=USD"); 
     const {data:ETH} = await responseETH.json();
     console.log(ETH);
 
-    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=USDT&convert=USD"); 
+    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=USDT&convert=USD"); 
     const {data:USDT} = await responseUSDT.json();
     console.log(USDT);
 
@@ -84,8 +83,13 @@ router.get("/userpage", async (req, res) => {
         raw: true,
       });
     }
+// conflict
+    res.render("home", {
+      title: "Home Page",
+
     res.render("userpage", {
       title: "User Page",
+
       isLoggedIn: req.session.isLoggedIn,
       user,
       posts,
