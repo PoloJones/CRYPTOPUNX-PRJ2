@@ -3,7 +3,7 @@ const sequelize = require("../config/connection");
 const { User, Post } = require("../models");
 
 const userData = require("./userData.json");
-const postData = require('./postData.json');
+const postData = require("./postData.json");
 
 const seedDatabase = async () => {
   try {
@@ -11,11 +11,10 @@ const seedDatabase = async () => {
     await User.bulkCreate(userData, {
       individualHooks: true,
       returning: true,
-    })
-
+    });
 
     await Post.bulkCreate(postData);
-    
+
     console.log("Finished seeding database.");
   } catch (error) {
     console.error(error);
