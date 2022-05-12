@@ -17,18 +17,7 @@
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.nav-wrapper {
-    background-color: #ffffff !important;
-	height: 100px;
-	color: black;
-  }
-
-  #logo {
-    width: 315px;
-}
-
-
-body {	
+body {
 	background: rgb(26, 49, 95);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 49, 95, 1)), color-stop(10%, rgba(26, 49, 95, 1)), color-stop(24%, rgba(29, 108, 141, 1)), color-stop(37%, rgba(41, 136, 151, 1)), color-stop(77%, rgba(39, 45, 100, 1)), color-stop(90%, rgba(26, 49, 95, 1)), color-stop(100%, rgba(26, 49, 95, 1)));
 	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#1a315f', GradientType=0);
@@ -57,6 +46,7 @@ body {
 }
 
 .container {
+	margin-top: -70px;
 	background-color: var(--white);
 	border-radius: var(--button-radius);
 	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
@@ -156,7 +146,7 @@ body {
 }
 
 .overlay--right {
-	right: 20px;
+	right: 0;
 	transform: translateX(0);
 }
 
@@ -210,21 +200,3 @@ body {
 	width: 100%;
 }
 
-/* bootstrap dropdown hover menu*/
-
-body {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 13px;
-	font-weight: 400;
-	color: #000000;
-	position: relative;
-	background: rgb(26, 49, 95);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 49, 95, 1)), color-stop(10%, rgba(26, 49, 95, 1)), color-stop(24%, rgba(29, 108, 141, 1)), color-stop(37%, rgba(41, 136, 151, 1)), color-stop(77%, rgba(39, 45, 100, 1)), color-stop(90%, rgba(26, 49, 95, 1)), color-stop(100%, rgba(26, 49, 95, 1)));
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#1a315f', GradientType=0);
-  }
-  
-  
-  nav {
-	margin-top: 60px;
-	box-shadow: 5px 4px 5px #000;
-  }
