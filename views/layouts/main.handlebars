@@ -1,22 +1,38 @@
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
-  <body>
-    <nav>
-      <a href='/'>Home</a>
-      {{#if isLoggedIn}}
-        <button class='btn btn-logout'>Log Out</button>
-      {{else}}
-        <a href='/login'>login</a>
-        <a href='/signup'>signup</a>
-      {{/if}}
-    </nav>
-    {{{body}}}
-    <script src='/js/main.js'></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- header with title and login button -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">CRYPTOPUNX</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/login.html">LOGIN</a></li>
+        <li><a href="/login.html">SIGN UP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  {{{body}}}
+
+
+
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
 </html>
