@@ -12,15 +12,10 @@ const { User, Post } = require("../models");
 //route to display 3 coins on landing page
 router.get("/", async (req, res) => {
   try {
-    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD"); 
-    const {data:coins} = await responseCoin.json();
-    console.log(coins);
-  
     const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=BTC&convert=USD"); 
     const {data:BTC} = await responseBTC.json();
     console.log(BTC);
-    
-
+  
     const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=ETH&convert=USD"); 
     const {data:ETH} = await responseETH.json();
     console.log(ETH);
@@ -31,7 +26,6 @@ router.get("/", async (req, res) => {
 
     res.render("home", {
       title: "Home Page",
-      coins,
       BTC,
       ETH,
       USDT,
@@ -47,20 +41,16 @@ router.get("/", async (req, res) => {
 //route to display 3 coin prices and all posts IF logged in on userpage
 router.get("/userpage", async (req, res) => {
   try {
-    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ apikey + "&start=1&limit=30&convert=USD"); 
-    const {data:coins} = await responseCoin.json();
-    console.log(coins);
-  
-    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=BTC&convert=USD"); 
+    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=BTC&convert=USD"); 
     const {data:BTC} = await responseBTC.json();
     console.log(BTC);
     
 
-    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=ETH&convert=USD"); 
+    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=ETH&convert=USD"); 
     const {data:ETH} = await responseETH.json();
     console.log(ETH);
 
-    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ apikey + "&amount=1&symbol=USDT&convert=USD"); 
+    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=USDT&convert=USD"); 
     const {data:USDT} = await responseUSDT.json();
     console.log(USDT);
   
@@ -90,7 +80,6 @@ router.get("/userpage", async (req, res) => {
       isLoggedIn: req.session.isLoggedIn,
       user,
       posts,
-      coins,
       BTC,
       ETH,
       USDT,
@@ -104,10 +93,37 @@ router.get("/userpage", async (req, res) => {
 
 //route for top 30 coins
 
+router.get("/top30", async (req, res) => {
+  try {
+    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD"); 
+    const {data:coins} = await responseCoin.json();
+    console.log(coins);
+  
+
+    res.render("top30", {
+      title: "Top 30",
+
+      isLoggedIn: req.session.isLoggedIn,
+      coins,
+
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("⛔ Uh oh! An unexpected error occurred.");
+  }
+});
+
 
 //TO-DO check if we need this code modified?
-// router.get("/login", (req, res) => {
-//   res.render("login-signup", { title: "Log-In Page" });
+router.get("/login", (req, res) => {
+  res.render("login", { title: "Log-In Page" });
+});
+
+
+//change
+//TO-DO check if we need this code? I don't think we do.
+// router.get("/signup", (req, res) => {
+//   res.render("signup", { title: "Sign-Up Page" });
 // });
 
 router.get('/login', (req, res) => {
