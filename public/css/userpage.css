@@ -1,44 +1,43 @@
-
 #grad {
-    background-image: linear-gradient(#6a6a6a, #ffffff);
-    margin-bottom: 220px;
-  }
-
-.flex-container {
-    display: flex;
-    justify-content: center;
+  background-image: linear-gradient(#6a6a6a, #ffffff);
+  margin-bottom: 220px;
 }
 
-#ethereumCard, #bitcoinCard, #dogecoinCard{
-    width: 300px;
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+#ethereumCard,
+#bitcoinCard,
+#dogecoinCard {
+  width: 300px;
 }
 
 #logo {
-    width: 315px;
+  width: 315px;
 }
 
-.card-title{
+.card-title {
   color: #090d29;
-
 }
 
-.card-action{
-   color: #090d29;
+.card-action {
+  color: #090d29;
 }
 .nav-wrapper {
-    background-color: #090d29 !important;
-  }
+  background-color: #090d29 !important;
+}
 
-  .inputbg {
-    background-color:rgb(255, 255, 255);
-}  
+.inputbg {
+  background-color: rgb(255, 255, 255);
+}
 
-.boxwidth{
+.boxwidth {
   max-width: 50%;
 }
 
-.bold{
+.bold {
   font-weight: 800;
-color:#090d29 ;
+  color: #090d29;
 }
-
