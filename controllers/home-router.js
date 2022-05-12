@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
     const {data:USDT} = await responseUSDT.json();
     console.log(USDT);
 
-    res.render("homepage", {
+    res.render("home", {
       title: "Home Page",
       coins,
       BTC,
@@ -83,9 +83,6 @@ router.get("/userpage", async (req, res) => {
         raw: true,
       });
     }
-// conflict
-    res.render("home", {
-      title: "Home Page",
 
     res.render("userpage", {
       title: "User Page",
@@ -109,13 +106,18 @@ router.get("/userpage", async (req, res) => {
 
 
 //TO-DO check if we need this code modified?
-router.get("/login", (req, res) => {
-  res.render("login", { title: "Log-In Page" });
-});
-
-//TO-DO check if we need this code? I don't think we do.
-// router.get("/signup", (req, res) => {
-//   res.render("signup", { title: "Sign-Up Page" });
+// router.get("/login", (req, res) => {
+//   res.render("login-signup", { title: "Log-In Page" });
 // });
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/userpage');
+    return;
+  }
+
+  res.render('home');
+});
 
 module.exports = router;
