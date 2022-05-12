@@ -119,6 +119,8 @@ router.get("/login", (req, res) => {
   res.render("login", { title: "Log-In Page" });
 });
 
+
+//change
 //TO-DO check if we need this code? I don't think we do.
 // router.get("/signup", (req, res) => {
 //   res.render("signup", { title: "Sign-Up Page" });
