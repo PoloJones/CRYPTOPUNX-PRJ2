@@ -1,20 +1,26 @@
  <!-- Column Chart for top 3 coins -->
-<div class="container1" id="coinchart">
-<h1>Top 3 Coins LIVE</h1>
-<canvas id="coinChart"></canvas>
-    </div>
+<div class="container1 center" id="coinchart">
+<h3>Top 3 Coins LIVE</h3>
+
+
+
 {{#BTC}}
-<h2>{{name}}</h2>
-<p>{{quote.USD.price}}</p>
+<h6>{{name}} </h6>
+<p>{{quote.USD.price}} </p>
 {{/BTC}}
 {{#ETH}}
-<h2>{{name}}</h2>
-<p>{{quote.USD.price}}</p>
+<h6>{{name}} </h6>
+<p>{{quote.USD.price}} </p>
 {{/ETH}}
 {{#USDT}}
-<h2>{{name}}</h2>
-<p>{{quote.USD.price}}</p>
+<h6>{{name}} </h6>
+<p>{{quote.USD.price}} </p>
 {{/USDT}}
+
+
+
+
+
 <a class='btn' href='/top30'>Top 30 Crypto</a>
 <h4>Want to know which coin might be going to the moon?</h4>
 
@@ -24,40 +30,4 @@
 {{/unless}}
 <script src="/js/main.js"></script>
 
-router.post("/chart", withAuth, async (req, res) => {
-  const ticker = req.body.ticker;
-  const tMonthAgo = moment().subtract(1, "months").format("YYYY-MM-DD");
-  const tCurrent = moment().format("YYYY-MM-DD");
-  const pgUrl = `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${tMonthAgo}/${tCurrent}?adjusted=true&sort=asc&apiKey=${process.env.PG_KEY}`;
-
-  const response = await fetch(pgUrl);
-  const rawdata = await response.json();
-
-  // NEED TO ADD MORE TO SEND INFO TO CLIENT
-  if (!rawdata.results) {
-    res.status(400).send("⛔ Invalid Ticker.");
-    return;
-  }
-
-  let x = [];
-  let y = [];
-
-  rawdata.results.forEach((obj) => {
-    y.push(obj.c);
-    x.push(obj.t);
-  });
-
-  const last = x[x.length - 1];
-  const xLength = x.length;
-  for (let i = 1; i < xLength; i++) {
-    x.push(last + i * 86400000);
-  }
-
-  const data = {
-    ticker,
-    x,
-    y,
-  };
-
-  res.json(data);
-});
+</div>
