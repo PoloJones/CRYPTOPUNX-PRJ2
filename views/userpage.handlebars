@@ -2,7 +2,8 @@
 <h2>Welcome, {{user.username}}!</h2>
 <p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
-<!-- 3 crypto cards displaying price at the top (copy from index.html) -->
+
+{{!-- <!-- 3 crypto cards displaying price at the top (copy from index.html) -->
 {{!-- will be replaced with coin API information --}}
 {{#each coins}}
 <div class="flex-container">
@@ -22,32 +23,90 @@
   </div>
 </div>
 </div>
+{{/each}} 
+
+{{!-- {{#if post.length}}
+  <div class="col-md-6 post-list">
+    <h3>Current Posts:</h3>
+
+    {{#each post}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{post.name}}{{post.description}}</h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div> --}}
+
+<!-- Loop over each object in the projects array -->
+
+<div class="container" id="existingPosts">
+
+{{#each posts as |post| }}
+<div class="row center box ">
+  <div class="col s12">
+  <div class="card-content black-text">
+    <p>
+   {{post.description}}
+    </p>
+    <p>Created by {{post.name}} </p>
+</div>
+  </div>
+</div>
 {{/each}}
-
-
+</div>
+{{!--    
+        <label for="project-name">project name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div> --}}
 
 <div class="container" id="inputBox">
 
   <!-- user input for their forum post + submit button -->
   <div class="row center box">
-    <form class="col s12">
+    <form class="col s12 new-post-form">
       <div class="row">
         <p class="bold">Add a post</p>
         <div class="input-field col s12 inputbg">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1"></label>
+          <textarea id="username" class="materialize-textarea"></textarea>
+          <label for="username">username:</label>
+        {{!-- <input class="form-input" type="text" id="username" name="username" /> --}}
+         <textarea id="description" class="materialize-textarea"></textarea>
+        <div class="row"><label for="description">description :</label>
+        {{!-- <input class="form-input" type="number" id="description" name="description" /> --}}
+        </div>
+        
+         </div>
         </div>
       </div>
     </form>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+    {{!-- <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button> --}}
   </div>
-
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
 
   <!-- display posts that were previously submitted by user/other users here -->
-  {{#each userData}}
+  {{!-- {{#each userData}}
   <div class="col s12 m6">
     <div class="card posts">
-      <div class="card-content black-text">
+      
         <span class="card-title">{{username}}</span>
         <p>{{description}}{{date_created}}</p>
       </div>
@@ -56,7 +115,7 @@
       </div>
     </div>
   </div>
-  {{/each}}
+  {{/each}} --}}
 
 
 </div>
