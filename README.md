@@ -8,7 +8,7 @@
 
 **[Coin Market Cap API](https://coinmarketcap.com/api/)**
 
-The Coin Market Cap API provides useful data on various cryptocurrency.
+The Coin Market Cap API provides useful data on various cryptocurrencies.
 
 Data Used:
 
@@ -23,8 +23,8 @@ Data Used:
 
 ## Screenshots of Application Pages
 
-put screenshots here
+![](./screenshot.png)
 
 ## Deployed Application
 
-### [Crypto Punx](insert url here)
+### [Crypto Punx](https:///PoloJones.github.io/CRYPTOPUNX-PRJ2/)
