@@ -7,15 +7,21 @@
     </div>
   </div>
 </div>
+<div class="container5  postBox" id="existingPosts"></div>
+<div class="row center box  blah">
+  <div class="col s12 indBox2">
+    <div class="card-content black-text">
 
-
-<div class="grid-container">
-  {{#each coins}}
-  <h2>{{name}}</h2>
-  <p>{{quote.USD.price}}</p>
-  <p>{{market_cap}}</p>
-  <p>{{circulating_supply}}</p>
-  {{/each}}
+      <div class="grid-container2">
+        {{#each coins}}
+        <h2 class="titles">{{name}}</h2>
+        <p>{{quote.USD.price}}</p>
+        <p>{{market_cap}}</p>
+        <p>{{circulating_supply}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
 
 </div>
 <div class="center">
