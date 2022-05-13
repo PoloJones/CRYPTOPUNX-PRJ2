@@ -1,6 +1,6 @@
-# Crypto Punx
+# CryptoPunx
 
-"Crypto Punx" is an app that will allow users to both see up to date information about different cryptocurrencies as well as allow them to participate in a communal space which allows viewing and posting comments about trends and hot leads in the cryptoworld. This allows the user to make informed decisions based on what others are talking about as well as post their own insights to help others.
+"CryptoPunx" is an app that will allow users to both see up to date information about different cryptocurrencies as well as allow them to participate in a communal space which allows viewing and posting comments about trends and hot leads in the cryptoworld. This allows the user to make informed decisions based on what others are talking about as well as post their own insights to help others.
 
 ## Technologies Used
 
@@ -27,4 +27,4 @@ Data Used:
 
 ## Deployed Application
 
-### [Crypto Punx](https:///PoloJones.github.io/CRYPTOPUNX-PRJ2/)
+### [CryptoPunx](https:///PoloJones.github.io/CRYPTOPUNX-PRJ2/)
