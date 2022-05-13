@@ -1,3 +1,7 @@
+{{#if isLoggedIn}}
+<h2>Welcome, {{user.username}}!</h2>
+<p>Your id is <strong>{{user.id}}</strong>.</p>
+{{/if}}
 <!-- 3 crypto cards displaying price at the top (copy from index.html) -->
 {{!-- will be replaced with coin API information --}}
 <div class = "rowcontent">
@@ -97,3 +101,4 @@
 
 
 </div>
+<script src="/js/userpage.js"></script>
