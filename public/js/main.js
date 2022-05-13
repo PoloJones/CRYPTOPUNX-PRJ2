@@ -1,15 +1,15 @@
-document.querySelector(".btn-logout").addEventListener("click", async () => {
-  try {
-    await fetch("/api/users/logout", { method: "POST" });
-    document.location.replace("/login");
-  } catch (error) {
-    console.error(error);
-    console.error("Failed to logout.");
-  }
-});
+// document.querySelector(".btn-logout").addEventListener("click", async () => {
+//   try {
+//     await fetch("/api/users/logout", { method: "POST" });
+//     document.location.replace("/login");
+//   } catch (error) {
+//     console.error(error);
+//     console.error("Failed to logout.");
+//   }
+// });
 
-var canvasElement = document.getElementById("coinChart");
-var config = {
+const canvasElement = document.getElementById("coinChart");
+const config = {
     type: "bar",
     data: { 
         labels: ["BitCoin", "Ethereum", "DogeCoin"],
@@ -31,4 +31,5 @@ var config = {
     },
 };
 
-var coinChart = new Chart (canvasElement, config);
+// const coinChart = new Chart (canvasElement, config);
+// console.log(coinChart);
