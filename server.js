@@ -23,7 +23,7 @@ app.use(router);
 
 // connect db and listen
 sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(() => {
     app.listen(PORT, (err) => {
       if (err) {
