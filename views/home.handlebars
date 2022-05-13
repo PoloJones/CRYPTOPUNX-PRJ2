@@ -1,24 +1,21 @@
- <!-- Column Chart for top 3 coins -->
-<div class="container1 center" id="coinchart">
-<h3>Top 3 Coins LIVE</h3>
 
-
-
-{{#BTC}}
-<h6>{{name}} </h6>
-<p>{{quote.USD.price}} </p>
-{{/BTC}}
-{{#ETH}}
-<h6>{{name}} </h6>
-<p>{{quote.USD.price}} </p>
-{{/ETH}}
-{{#USDT}}
-<h6>{{name}} </h6>
-<p>{{quote.USD.price}} </p>
-{{/USDT}}
-
-
-
+<!-- Column Chart for top 3 coins -->
+<div class="container1" id="coinchart">
+    <h1 class="homeTitle">Top 3 Coins LIVE</h1>
+    {{!-- <canvas id="coinChart"></canvas> coin chart --}}
+    {{#BTC}}
+    <h2 class="cryptoTitle">{{name}}</h2>
+    <p>{{quote.USD.price}}</p>
+    {{/BTC}}
+    {{#ETH}}
+    <h2 class="cryptoTitle">{{name}}</h2>
+    <p>{{quote.USD.price}}</p>
+    {{/ETH}}
+    {{#USDT}}
+    <h2 class="cryptoTitle">{{name}}</h2>
+    <p>{{quote.USD.price}}</p>
+    {{/USDT}}
+</div>
 
 
 <a class='btn' href='/top30'>Top 30 Crypto</a>
@@ -31,3 +28,4 @@
 <script src="/js/main.js"></script>
 
 </div>
+
