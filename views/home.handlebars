@@ -1,27 +1,24 @@
 <h1>Home</h1>
 {{#if isLoggedIn}}
-  <h2>Welcome, {{user.username}}!</h2>
-  <p>Your id is <strong>{{user.id}}</strong>.</p>
+<h2>Welcome, {{user.username}}!</h2>
+<p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
+{{#BTC}}
+<h2>{{name}}</h2>
+<p>{{quote.USD.price}}</p>
+{{/BTC}}
+{{#ETH}}
+<h2>{{name}}</h2>
+<p>{{quote.USD.price}}</p>
+{{/ETH}}
+{{#USDT}}
+<h2>{{name}}</h2>
+<p>{{quote.USD.price}}</p>
+{{/USDT}}
 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quasi ab harum
   sequi quis iure voluptatibus doloremque dicta optio maiores!</p>
 {{#unless isLoggedIn}}
-  <br />
-  <a class='btn' href='/signup'>Sign Up</a>
+<br />
+<a class='btn' href='/login'>Sign In</a>
 {{/unless}}
-{{#BTC}}
-  <h2>{{name}}</h2>
-  <p>{{quote.USD.price}}</p>
-{{/BTC}}
-{{#ETH}}
-  <h2>{{name}}</h2>
-  <p>{{quote.USD.price}}</p>
-{{/ETH}}
-{{#USDT}}
-  <h2>{{name}}</h2>
-  <p>{{quote.USD.price}}</p>
-{{/USDT}}
-
-
-
