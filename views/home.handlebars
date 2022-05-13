@@ -1,8 +1,9 @@
 <h1>Home</h1>
-{{#if isLoggedIn}}
-<h2>Welcome, {{user.username}}!</h2>
-<p>Your id is <strong>{{user.id}}</strong>.</p>
-{{/if}}
+    <!-- Column Chart for top 3 coins -->
+    <div class="container1" id="coinchart">
+<h1>Top 3 Coins LIVE</h1>
+<canvas id="coinChart"></canvas>
+    </div>
 {{#BTC}}
 <h2>{{name}}</h2>
 <p>{{quote.USD.price}}</p>
@@ -22,4 +23,4 @@
 <br />
 <a class='btn' href='/login'>Sign In</a>
 {{/unless}}
-<script src="/js/login.js"></script>
+<script src="/js/main.js"></script>
