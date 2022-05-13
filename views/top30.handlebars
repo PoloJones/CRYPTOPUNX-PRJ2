@@ -1,28 +1,23 @@
-
-    <div class="row1">
-        <div class="col s12 m6">
-          <div class="card blue-white darken-1">
-            <div class="card-content black-text">
-              <span class="card-title">TOP 30 PERFORMING CRYPTOCURRENCIES</span>
-          </div>
-        </div>
+<div class="row1">
+  <div class="col s12 m6">
+    <div class="card blue-white darken-1">
+      <div class="card-content black-text">
+        <span class="card-title">TOP 30 PERFORMING CRYPTOCURRENCIES</span>
       </div>
+    </div>
+  </div>
+</div>
 
-    
+
 <div class="grid-container">
   {{#each coins}}
   <h2>{{name}}</h2>
   <p>{{quote.USD.price}}</p>
   <p>{{market_cap}}</p>
   <p>{{circulating_supply}}</p>
-{{/each}}
+  {{/each}}
 
 </div>
-      <div class="center">
-   
-          <a class='btn' href='/'>Return to home</a>
-      </div>
-    <!--JavaScript at end of body for optimized loading-->
-    
-  </body>
-</html>
+<div class="center">
+  <a class='btn' href='/'>Return to home</a>
+</div>
