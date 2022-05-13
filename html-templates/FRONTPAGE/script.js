@@ -1,5 +1,5 @@
-var canvasElement = document.getElementById("coinChart");
-var config = {
+const canvasElement = document.getElementById("coinChart");
+const config = {
   type: "bar",
   data: {
     labels: ["BitCoin", "Ethereum", "DogeCoin"],
@@ -19,4 +19,4 @@ var config = {
   },
 };
 
-var coinChart = new Chart(canvasElement, config);
+const coinChart = new Chart(canvasElement, config);

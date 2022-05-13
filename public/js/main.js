@@ -1,12 +1,12 @@
-// document.querySelector(".btn-logout").addEventListener("click", async () => {
-//   try {
-//     await fetch("/api/users/logout", { method: "POST" });
-//     document.location.replace("/login");
-//   } catch (error) {
-//     console.error(error);
-//     console.error("Failed to logout.");
-//   }
-// });
+document.querySelector(".btn-logout").addEventListener("click", async () => {
+  try {
+    await fetch("/api/users/logout", { method: "POST" });
+    document.location.replace("/login");
+  } catch (error) {
+    console.error(error);
+    console.error("Failed to logout.");
+  }
+});
 
 const canvasElement = document.getElementById("coinChart");
 const config = {
@@ -31,5 +31,5 @@ const config = {
     },
 };
 
-// const coinChart = new Chart (canvasElement, config);
-// console.log(coinChart);
+const coinChart = new Chart (canvasElement, config);
+console.log(coinChart);
