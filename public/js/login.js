@@ -2,8 +2,8 @@
 const handleLoginSubmit = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector("#loginUsername").value.trim();
-    const password = document.querySelector("#loginPassword").value.trim();
+    const username = document.querySelector("#username").value.trim();
+    const password = document.querySelector("#password").value.trim();
 
     if (!username || !password) {
       alert("You must provide a username and password.");
@@ -19,41 +19,34 @@ const handleLoginSubmit = async (event) => {
     });
 
     if (!response.ok) {
-      alert("Failed to sign up.");
+      alert("Failed to sign in.");
       return;
     }
 
     // go to home page
-    window.location.replace("/");
+    window.location.replace("/userpage");
   } catch (error) {
     console.log(error);
   }
 };
 
-document
-  .querySelector(".login-form")
-  .addEventListener("submit", handleLoginSubmit);
+document.getElementById("signIn").addEventListener("click", handleLoginSubmit);
+
 
 //sign up
 // Validate user input and send login request
 const handleSignupSubmit = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector("#signupUsername").value.trim();
-    const password = document.querySelector("#signupPassword").value.trim();
-    const confirmPassword = document
-      .querySelector("#confirm-password")
-      .value.trim();
+    const username = document.querySelector("#username").value.trim();
+    const password = document.querySelector("#password").value.trim();
+   
 
     if (!username || !password) {
       alert("You must provide a username and password.");
       return;
     }
 
-    if (password !== confirmPassword) {
-      alert("Passwords to not match.");
-      return;
-    }
 
     const response = await fetch("/api/users", {
       method: "POST",
@@ -69,12 +62,11 @@ const handleSignupSubmit = async (event) => {
     }
 
     // go to home page
-    window.location.replace("/");
+    window.location.replace("/userpage");
   } catch (error) {
     console.log(error);
   }
 };
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", handleSignupSubmit);
+ document.getElementById("signUp").addEventListener("click", handleSignupSubmit);
+
