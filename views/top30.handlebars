@@ -7,34 +7,16 @@
     </div>
   </div>
 
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: auto auto auto auto;
-      grid-template-rows: 100px 400px;
-      gap: 10px;
-      background-color: #090d29;
-      padding: 10px;
-      color: black;
-    }
+<div class="grid-container"> 
 
-    .grid-container>div {
-      background-color: rgb(255, 255, 255);
-      text-align: center;
-      padding: 20px 0;
-      font-size: 30px;
-    }
-  </style>
-  <div class="grid-container">
+  {{#each coins}}
+    <p>{{name}}</p>
+    <p>{{quote.USD.price}}</p>
+    <p>{{market_cap}}</p>
+    <p>{{circulating_supply}}</p>
+  {{/each}}
+</div>
 
-    {{#each coins}}
-      <h2>{{name}}</h2>
-      <p>{{quote.USD.price}}</p>
-      <p>{{market_cap}}</p>
-      <p>{{circulating_supply}}</p>
-    {{/each}}
-  </div>
-
-  <div class="center">
+<div class="center">
     <a class='btn' href='/'>Home</a>
-  </div>
+</div>

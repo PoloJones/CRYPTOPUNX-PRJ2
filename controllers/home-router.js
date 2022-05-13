@@ -97,19 +97,12 @@ router.get("/top30", async (req, res) => {
     const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest/ohlcv/historical?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD"); 
     const {data:coins} = await responseCoin.json();
     console.log(coins);
-
-    // adds high and low data option 
-    // const responseHistory = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/ohlcv/historical?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD");
-    // const {data:history} = await responseHistory.json();
-    // console.log(history)
   
-
     res.render("top30", {
       title: "Top 30",
 
       isLoggedIn: req.session.isLoggedIn,
       coins,
-      //history,
     });
   } catch (error) {
     console.error(error);

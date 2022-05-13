@@ -1,25 +1,66 @@
 <!-- 3 crypto cards displaying price at the top (copy from index.html) -->
 {{!-- will be replaced with coin API information --}}
-{{#each coins}}
-<div class="flex-container">
-  <div class="row" id="ETHER">
-    <div class="column">
-      <div class="card" id="ethereumCard">
-        <div class="card-image">
-          <img
-            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
-          <span class="card-title" id="ethereumName">{{name}}</span>
-        </div>
-        <div class="card-action">
-          <a href="#">ABOUT {{name}}</a>
+<div class = "rowcontent">
+  {{#BTC}}
+  <div class="flex-container">
+    <div class="row" id="ETHER">
+      <div class="column">
+        <div class="card" id="ethereumCard">
+          <div class="card-image">
+            <img
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
+            <span class="card-title" id="ethereumName">{{name}}<p>{{quote.USD.price}}</p></span>
+          </div>
+          <div class="card-action">
+            <a href="#">ABOUT {{name}}</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-{{/each}}
+  </div>
+  {{/BTC}}
 
+  {{#ETH}}
+  <div class="flex-container">
+    <div class="row" id="ETHER">
+      <div class="column">
+        <div class="card" id="ethereumCard">
+          <div class="card-image">
+            <img
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
+            <span class="card-title" id="ethereumName">{{name}}<p>{{quote.USD.price}}</p></span>
+          </div>
+          <div class="card-action">
+            <a href="#">ABOUT {{name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/ETH}}
+
+  {{#USDT}}
+  <div class="flex-container">
+    <div class="row" id="ETHER">
+      <div class="column">
+        <div class="card" id="ethereumCard">
+          <div class="card-image">
+            <img
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
+            <span class="card-title" id="ethereumName">{{name}}<p>{{quote.USD.price}}</p></span>
+          </div>
+          <div class="card-action">
+            <a href="#">ABOUT {{name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/USDT}}
+</div>
 
 
 <div class="container" id="inputBox">
@@ -40,12 +81,12 @@
 
 
   <!-- display posts that were previously submitted by user/other users here -->
-  {{#each userData}}
+  {{#each postData}}
   <div class="col s12 m6">
     <div class="card posts">
       <div class="card-content black-text">
-        <span class="card-title">{{username}}</span>
-        <p>{{description}}{{date_created}}</p>
+        <span class="card-title">{{name}}</span>
+        <p>{{description}}</p>
       </div>
       <div class="card-action right-align">
         <a href="#">Delete</a>
