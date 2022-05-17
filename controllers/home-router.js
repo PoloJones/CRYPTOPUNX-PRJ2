@@ -121,7 +121,6 @@ router.get("/top30", async (req, res) => {
 
       isLoggedIn: req.session.isLoggedIn,
       coins,
-      //history,
     });
   } catch (error) {
     console.error(error);

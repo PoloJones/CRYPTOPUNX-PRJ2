@@ -17,8 +17,25 @@
             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
           <span class="card-title" id="ethereumName">{{name}}</span>
         </div>
-        <div class="card-action">
-          <a href="#">ABOUT {{name}}</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/BTC}}
+
+  {{#ETH}}
+  <div class="flex-container">
+    <div class="row" id="ETHER">
+      <div class="column">
+        <div class="card" id="ethereumCard">
+          <div class="card-image">
+            <img
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.tradingview.com%2Fu%2FUCikR7Uz_mid.png&f=1&nofb=1">
+            <span class="card-title" id="ethereumName">{{name}}<p>{{quote.USD.price}}</p></span>
+          </div>
+          <div class="card-action">
+            <a href="#">ABOUT {{name}}</a>
+          </div>
         </div>
       </div>
     </div>

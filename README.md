@@ -27,4 +27,4 @@ Data Used:
 
 ## Deployed Application
 
-### [CryptoPunx](https:///PoloJones.github.io/CRYPTOPUNX-PRJ2/)
+### [CryptoPunx](https://guarded-scrubland-93446.herokuapp.com/)
