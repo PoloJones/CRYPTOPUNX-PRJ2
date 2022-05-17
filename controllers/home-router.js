@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 const router = require("express").Router();
 const { User, Post } = require("../models");
 // use withAuth middleware to redirect from protected routes.
@@ -12,17 +12,26 @@ const { User, Post } = require("../models");
 //route to display 3 coins on landing page
 router.get("/", async (req, res) => {
   try {
-    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=BTC&convert=USD"); 
-    const {data:BTC} = await responseBTC.json();
-    console.log(BTC);
-  
-    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=ETH&convert=USD"); 
-    const {data:ETH} = await responseETH.json();
-    console.log(ETH);
+    const responseBTC = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=BTC&convert=USD"
+    );
+    const { data: BTC } = await responseBTC.json();
 
-    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=USDT&convert=USD"); 
-    const {data:USDT} = await responseUSDT.json();
-    console.log(USDT);
+    const responseETH = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=ETH&convert=USD"
+    );
+    const { data: ETH } = await responseETH.json();
+
+    const responseUSDT = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=USDT&convert=USD"
+    );
+    const { data: USDT } = await responseUSDT.json();
 
     res.render("home", {
       title: "Home Page",
@@ -36,35 +45,42 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 //route to display 3 coin prices and all posts IF logged in on userpage
 router.get("/userpage", async (req, res) => {
   try {
-    const responseBTC = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=BTC&convert=USD"); 
-    const {data:BTC} = await responseBTC.json();
-    console.log(BTC);
-    
+    const responseBTC = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=BTC&convert=USD"
+    );
+    const { data: BTC } = await responseBTC.json();
 
-    const responseETH = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=ETH&convert=USD"); 
-    const {data:ETH} = await responseETH.json();
-    console.log(ETH);
+    const responseETH = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=ETH&convert=USD"
+    );
+    const { data: ETH } = await responseETH.json();
 
-    const responseUSDT = await fetch('https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&amount=1&symbol=USDT&convert=USD"); 
-    const {data:USDT} = await responseUSDT.json();
-    console.log(USDT);
-  
+    const responseUSDT = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&amount=1&symbol=USDT&convert=USD"
+    );
+    const { data: USDT } = await responseUSDT.json();
+
     //code to display all posts
     const postData = await Post.findAll({
       include: [
-          {
-            model: User,
-            attributes: ['username'],
-          },
-        ],
-  });
-  // Serialize data so the template can read it
-  const posts = postData.map((post) => post.get({ plain: true }));
-  
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
+    // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+
     let user;
     if (req.session.isLoggedIn) {
       user = await User.findByPk(req.session.userId, {
@@ -72,7 +88,7 @@ router.get("/userpage", async (req, res) => {
         raw: true,
       });
     }
-
+    console.log(posts);
     res.render("userpage", {
       title: "User Page",
 
@@ -82,7 +98,6 @@ router.get("/userpage", async (req, res) => {
       BTC,
       ETH,
       USDT,
-
     });
   } catch (error) {
     console.error(error);
@@ -94,10 +109,13 @@ router.get("/userpage", async (req, res) => {
 
 router.get("/top30", async (req, res) => {
   try {
-    const responseCoin = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest/ohlcv/historical?CMC_PRO_API_KEY='+ process.env.DB_APIKEY + "&start=1&limit=30&convert=USD"); 
-    const {data:coins} = await responseCoin.json();
-    console.log(coins);
-  
+    const responseCoin = await fetch(
+      "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=" +
+        process.env.DB_APIKEY +
+        "&start=1&limit=30&convert=USD"
+    );
+    const { data: coins } = await responseCoin.json();
+
     res.render("top30", {
       title: "Top 30",
 
@@ -110,29 +128,19 @@ router.get("/top30", async (req, res) => {
   }
 });
 
-
 //TO-DO check if we need this code modified?
 router.get("/login", (req, res) => {
   res.render("login", { title: "Log-In Page" });
 });
 
-
-//change
-//TO-DO check if we need this code? I don't think we do.
-// router.get("/signup", (req, res) => {
-//   res.render("signup", { title: "Sign-Up Page" });
-// });
-
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/userpage');
+    res.redirect("/userpage");
     return;
   }
 
-  res.render('home');
+  res.render("home");
 });
 
 module.exports = router;
-
-
